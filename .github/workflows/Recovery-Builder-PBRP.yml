@@ -161,6 +161,7 @@ jobs:
         mv ${{ github.event.inputs.BUILD_TARGET }}.img ${{ github.event.inputs.MANIFEST_BRANCH }}_3.7.0-v000-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
         echo "Done renaming into ${{ github.event.inputs.MANIFEST_BRANCH }}_3.7.0-v000-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img"
       working-directory: ${{ steps.pwd.outputs.workdir }}
+      continue-on-error: true
       
     - name: Upload to Release
       uses: ncipollo/release-action@v1.11.1
